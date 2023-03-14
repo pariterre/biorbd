@@ -561,7 +561,7 @@ BIORBD_NAMESPACE::rigidbody::GeneralizedCoordinates & {
         PyObject *data = PyArray_FROM_OTF((PyObject*)$input, NPY_DOUBLE, NPY_ARRAY_IN_ARRAY);
         // Copy the actual data
         unsigned int nQ(dims[0]);
-        $1 = new BIORBD_NAMESPACE::rigidbody::GeneralizedCoordinates(nQ);
+        $1->resize(nQ);
         for (unsigned int q=0; q<nQ; ++q){
             (*$1)[q] = *(double*)PyArray_GETPTR1((PyArrayObject*)data, q);
         }
@@ -616,7 +616,7 @@ BIORBD_NAMESPACE::rigidbody::GeneralizedCoordinates & {
         PyObject *data = PyArray_FROM_OTF((PyObject*)$input, NPY_DOUBLE, NPY_ARRAY_IN_ARRAY);
         // Copy the actual data
         unsigned int nQ(dims[0]);
-        $1 = new BIORBD_NAMESPACE::rigidbody::GeneralizedCoordinates(nQ);
+        $1->resize(nQ);
         for (unsigned int q=0; q<nQ; ++q){
             (*$1)[q] = *(double*)PyArray_GETPTR1((PyArrayObject*)data, q);
         }
@@ -677,7 +677,7 @@ BIORBD_NAMESPACE::rigidbody::GeneralizedVelocity & {
         PyObject *data = PyArray_FROM_OTF((PyObject*)$input, NPY_DOUBLE, NPY_ARRAY_IN_ARRAY);
         // Copy the actual data
         unsigned int nQdot(dims[0]);
-        $1 = new BIORBD_NAMESPACE::rigidbody::GeneralizedVelocity(nQdot);
+        $1->resize(nQdot);
         for (unsigned int qdot=0; qdot<nQdot; ++qdot){
             (*$1)[qdot] = *(double*)PyArray_GETPTR1((PyArrayObject*)data, qdot);
         }
@@ -733,7 +733,7 @@ BIORBD_NAMESPACE::rigidbody::GeneralizedVelocity * {
         PyObject *data = PyArray_FROM_OTF((PyObject*)$input, NPY_DOUBLE, NPY_ARRAY_IN_ARRAY);
         // Copy the actual data
         unsigned int nQdot(dims[0]);
-        $1 = new BIORBD_NAMESPACE::rigidbody::GeneralizedVelocity(nQdot);
+        $1->resize(nQdot);
         for (unsigned int qdot=0; qdot<nQdot; ++qdot){
             (*$1)[qdot] = *(double*)PyArray_GETPTR1((PyArrayObject*)data, qdot);
         }
@@ -790,7 +790,7 @@ BIORBD_NAMESPACE::rigidbody::GeneralizedAcceleration & {
         PyObject *data = PyArray_FROM_OTF((PyObject*)$input, NPY_DOUBLE, NPY_ARRAY_IN_ARRAY);
         // Copy the actual data
         unsigned int nQddot(dims[0]);
-        $1 = new BIORBD_NAMESPACE::rigidbody::GeneralizedAcceleration(nQddot);
+        $1->resize(nQddot);
         for (unsigned int qddot=0; qddot<nQddot; ++qddot){
             (*$1)[qddot] = *(double*)PyArray_GETPTR1((PyArrayObject*)data, qddot);
         }
@@ -846,7 +846,7 @@ BIORBD_NAMESPACE::rigidbody::GeneralizedAcceleration * {
         PyObject *data = PyArray_FROM_OTF((PyObject*)$input, NPY_DOUBLE, NPY_ARRAY_IN_ARRAY);
         // Copy the actual data
         unsigned int nQddot(dims[0]);
-        $1 = new BIORBD_NAMESPACE::rigidbody::GeneralizedAcceleration(nQddot);
+        $1->resize(nQddot);
         for (unsigned int qddot=0; qddot<nQddot; ++qddot){
             (*$1)[qddot] = *(double*)PyArray_GETPTR1((PyArrayObject*)data, qddot);
         }
@@ -903,7 +903,7 @@ BIORBD_NAMESPACE::rigidbody::GeneralizedAcceleration * {
 
         // Copy the actual data
         unsigned int nGeneralizedTorque(dims[0]);
-        $1 = new BIORBD_NAMESPACE::rigidbody::GeneralizedTorque(nGeneralizedTorque);
+        $1->resize(nGeneralizedTorque);
         for (unsigned int GeneralizedTorque=0; GeneralizedTorque<nGeneralizedTorque; ++GeneralizedTorque)
             (*$1)[GeneralizedTorque] = *(double*)PyArray_GETPTR1((PyArrayObject*)data, GeneralizedTorque);
 
